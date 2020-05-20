@@ -3,15 +3,19 @@ class Storage {
     this.items = items;
   }
 
-  getItems(items) {
-    this.item = items;
+  getItems() {
+    return this.items;
   }
 
   addItem(item) {
     this.items.push(item);
   }
 
-  removeItem(item) {}
+  removeItem(item) {
+    if (this.items.includes(item)) {
+      this.items.splice(this.items.indexOf(item), 1);
+    }
+  }
 }
 
 const storage = new Storage([
